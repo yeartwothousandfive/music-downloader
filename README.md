@@ -1,3 +1,4 @@
+
 # Music Downloader
 
 A simple music downloader using Python and `yt-dlp`.
@@ -23,38 +24,22 @@ A simple music downloader using Python and `yt-dlp`.
    ```
 
 3. Install FFmpeg (if not already installed):
-
-   a. **Windows:**
-   - Download FFmpeg from the official site: [FFmpeg Download Page](https://ffmpeg.org/download.html).
-   - Extract the ZIP file to a directory (e.g., `C:\ffmpeg`).
-   - Add the `bin` folder to your system's PATH:
-     1. Open the Start menu, search for "Environment Variables," and open it.
-     2. Under "System Variables," select `Path` and click "Edit."
-     3. Click "New" and add the path to the `bin` folder (e.g., `C:\ffmpeg\bin`).
-     4. Click "OK" to save changes.
-
-   b. **Linux:**
-   - Install FFmpeg using your package manager:
+   - **Windows**: Download from [FFmpeg Official Site](https://ffmpeg.org/download.html), extract, and add the `bin` folder to your PATH.
+   - **Linux**: Install with:
      ```bash
      sudo apt update && sudo apt install ffmpeg
      ```
-
-   c. **MacOS:**
-   - Install FFmpeg using Homebrew:
+   - **MacOS**: Install with:
      ```bash
      brew install ffmpeg
      ```
 
-5. **Verify Installation:**
-   - Open a terminal or command prompt and type:
-     ```bash
-     ffmpeg -version
-     ```
-   - If the version information is displayed, FFmpeg is installed correctly.
+   Verify installation with:
+   ```bash
+   ffmpeg -version
+   ```
 
----
-
-5. Run the application:
+4. Run the application:
    ```bash
    python main.py
    ```
