@@ -14,7 +14,7 @@ A simple music downloader using Python and `yt-dlp`.
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/music-downloader.git
+   git clone https://github.com/yeartwothousandfive/music-downloader.git
    cd music-downloader
    ```
 
