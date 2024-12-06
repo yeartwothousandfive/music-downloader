@@ -1,8 +1,9 @@
+import os
 from mutagen.easyid3 import EasyID3
 from yt_dlp import YoutubeDL
-from .config import YDL_OPTIONS
 
-import os
+from .config import YDL_OPTIONS
+from downloader.spotify_utils import get_songs_from_playlist
 
 def add_metadata(file_path, title, artist, album):
     """Add metadata to the MP3 file."""
@@ -16,13 +17,23 @@ def add_metadata(file_path, title, artist, album):
     audio.save()
 
 def download_audio(video_url, metadata):
+    """Download a single song and add metadata."""
     try:
         with YoutubeDL(YDL_OPTIONS) as ydl:
             ydl.download([video_url])
         
-        filename = metadata['title'] + ".mp3"  
+        filename = metadata['title'] + ".mp3"  # Match output template
         file_path = os.path.join(DOWNLOADS_FOLDER, filename)
         add_metadata(file_path, metadata['title'], metadata['artist'], metadata['album'])
         print(f"Download and metadata addition completed: {file_path}")
     except Exception as e:
         print(f"An error occurred while downloading: {e}")
+
+def bulk_download(playlist_url):
+    """Download all songs from a Spotify playlist."""
+    print("Fetching playlist details...")
+    songs = get_songs_from_playlist(playlist_url)
+    for song in songs:
+        query = f"{song['title']} {song['artist']}"
+        print(f"Downloading: {query}")
+        download_audio(query, metadata=song)
