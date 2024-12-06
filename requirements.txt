@@ -1,5 +1,1 @@
-yt-dlp
-ffmpeg
-mutagen
-spotipy
-colorama
+youtube_dl
