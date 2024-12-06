@@ -1,9 +1,8 @@
 from downloader.downloader import download_audio, bulk_download
 from downloader.utils import is_valid_url
-from downloader.welcome import colorful_welcome
 
 def main():
-    colorful_welcome()
+    print("Welcome to the Music Downloader!")
     print("Options: \n1. Single Download\n2. Bulk Download (Spotify Playlist)")
     while True:
         choice = input("Enter your choice (or type 'exit' to quit): ").strip()
