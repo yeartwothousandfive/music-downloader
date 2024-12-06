@@ -1,3 +1,6 @@
+import os
+
+DOWNLOADS_FOLDER = os.path.join(os.path.expanduser("~"), "Downloads")
 
 YDL_OPTIONS = {
     'format': 'bestaudio/best',
@@ -6,6 +9,6 @@ YDL_OPTIONS = {
         'preferredcodec': 'mp3',
         'preferredquality': '192',
     }],
-    'outtmpl': '%(title)s.%(ext)s',  # Saves file with video title as filename
+    'outtmpl': os.path.join(DOWNLOADS_FOLDER, '%(title)s.%(ext)s'),  # Saves file with video title as filename
     'quiet': False,                  # Set to True to suppress logs
 }
