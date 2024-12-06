@@ -1,60 +1,23 @@
-
 # Music Downloader
 
-A simple music downloader using Python and `yt-dlp`.
+This project allows you to download music from YouTube and Spotify. You can either download individual tracks from YouTube or bulk download a playlist from Spotify, using YouTube as the source.
 
-## Features
-- Download audio from YouTube videos as MP3.
-- Automatically extracts and converts audio using FFmpeg.
+### Features:
+- **Download Single Track**: Input a YouTube URL to download a single track.
+- **Bulk Download from Spotify**: Input a Spotify playlist URL to download all tracks in the playlist.
+- **Add Metadata**: The downloaded MP3 files are tagged with song metadata (title, artist, album).
 
-## Requirements
-- Python 3.6+
-- FFmpeg installed on your system ([download here](https://ffmpeg.org/)).
+### Requirements:
+Make sure to install the dependencies:
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yeartwothousandfive/music-downloader.git
-   cd music-downloader
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Install FFmpeg (if not already installed):
-   - **Windows**: Download from [FFmpeg Official Site](https://ffmpeg.org/download.html), extract, and add the `bin` folder to your PATH.
-   - **Linux**: Install with:
-     ```bash
-     sudo apt update && sudo apt install ffmpeg
-     ```
-   - **MacOS**: Install with:
-     ```bash
-     brew install ffmpeg
-     ```
-
-   Verify installation with:
-   ```bash
-   ffmpeg -version
-   ```
-
-4. Run the application:
-   ```bash
-   python main.py
-   ```
-
-## Troubleshooting
-- **Error**: `Postprocessing: ffprobe and ffmpeg not found.`
-  - Ensure FFmpeg is installed and added to your system's PATH.
-  - Alternatively, specify the FFmpeg location when running the script:
-    ```bash
-    yt-dlp --ffmpeg-location /path/to/ffmpeg
-    ```
-
-## Dependencies
-- `yt-dlp`: For downloading and extracting audio from YouTube videos.
-- `FFmpeg`: For audio conversion.
+### Libraries Used:
+- `yt-dlp` - For downloading videos from YouTube.
+- `mutagen` - For adding metadata to MP3 files.
+- `spotipy` - For accessing Spotify data.
 
 ## License
 This project is open-source and licensed under the MIT License.
